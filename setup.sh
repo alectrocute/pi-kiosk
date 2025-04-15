@@ -5,17 +5,10 @@ export COLOR_RED='\e[0;31m'
 export COLOR_RESET='\e[0m'
 
 clear;
-echo -e "rocket-kiosk: ${COLOR_GREEN}Starting setup script!${COLOR_RESET}";
 
 generate_success_message() {
-    echo -e "${COLOR_GREEN}${1}${COLOR_RESET}";
-    sleep 2;
-    clear;
-}
-
-generate_error_message() {
-    echo -e "${COLOR_RED}${1}${COLOR_RESET}";
-    sleep 2;
+    echo -e "rocket-kiosk: ${COLOR_GREEN}${1}${COLOR_RESET}";
+    sleep 3;
     clear;
 }
 
@@ -34,18 +27,15 @@ sudo systemctl stop kiosk;
 sudo systemctl disable kiosk;
 generate_success_message "Removing kiosk service...";
 sudo rm -rf $SERVICE_PATH;
-clear;
 
 generate_success_message "Updating package list...";
 sudo apt-get update -y;
 generate_success_message "Installing dependencies...";
 sudo apt-get install git -y;
-clear;
 
 generate_success_message "Cloning the repository...";
 sudo git clone $GIT_REPO_URL;
 cd pi-kiosk;
-clear;
 
 generate_success_message "Installing the kiosk...";
 sudo mkdir -p $EXEC_PATH;
@@ -55,8 +45,6 @@ sudo cp kiosk.service $SERVICE_PATH;
 generate_success_message "Enabling kiosk service...";
 sudo systemctl enable kiosk.service;
 generate_success_message "Setup complete!";
-sleep 2;
-clear;
 
 # Start the kiosk.
 generate_success_message "Starting the kiosk...";
