@@ -6,7 +6,7 @@
 sleep 8
 
 echo 'Hiding the mouse cursor...'
-sudo unclutter -idle 0.1 -root &
+# sudo unclutter -idle 0.1 -root &
 
 echo 'Starting Chromium...'
 
