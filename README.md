@@ -16,6 +16,12 @@ For my own Kiosk, I'm using the following hardware to display a Home Assistant d
 
 ## Setup
 
+On the Raspberry Pi, with Raspian OS installed:
+
+```
+/bin/bash -c "$(curl -fsSL https://raw.githubusercontent.com/alectrocute/pi-kiosk/refs/heads/master/setup.sh)"
+```
+
 Ensure you're running Pi OS with a graphical interface (the 'full install'), and Chromium is installed (it should be, by default).
 
 Then open up Terminal and install a prerequisite:
