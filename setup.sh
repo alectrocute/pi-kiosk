@@ -3,7 +3,7 @@ echo "Starting setup script!";
 # Remove any existing kiosk installation.
 cd /home;
 echo "Removing any existing kiosk installation...";
-sudo rm -rf /home/pi-kiosk /home/pi;
+sudo rm -rf /home/pi-kiosk /home/pi/kiosk;
 echo "Stopping kiosk service...";
 sudo systemctl stop kiosk;
 sudo systemctl disable kiosk;
