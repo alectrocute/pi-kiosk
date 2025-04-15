@@ -8,7 +8,7 @@ KIOSK_URL=https://site.rocketalumnisolutions.com/home/45?touchscreen=true
 sleep 8
 
 echo 'Hiding the mouse cursor...'
-unclutter -idle 0.1 -root &
+sudo unclutter -idle 0.1 -root &
 
 echo 'Starting Chromium...'
-/usr/bin/chromium-browser --noerrdialogs --disable-infobars --kiosk --app=$KIOSK_URL
+sudo /usr/bin/chromium-browser --noerrdialogs --disable-infobars --kiosk --app=$KIOSK_URL
