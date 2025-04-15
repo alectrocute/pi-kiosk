@@ -11,7 +11,7 @@ echo 'Hiding the mouse cursor...'
 echo 'Starting Chromium...'
 
 flags=(
-   --kiosk
+#    --kiosk
    --touch-events=enabled
    --disable-pinch
    --noerrdialogs
