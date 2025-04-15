@@ -1,7 +1,23 @@
 #!/bin/bash
 
+export COLOR_GREEN='\e[0;32m'
+export COLOR_RED='\e[0;31m'
+export COLOR_RESET='\e[0m'
+
 clear;
-echo "Starting setup script!";
+echo -e "${COLOR_GREEN}Starting setup script!${COLOR_RESET}";
+
+generate_success_message() {
+    echo -e "${COLOR_GREEN}${1}${COLOR_RESET}";
+    sleep 2;
+    clear;
+}
+
+generate_error_message() {
+    echo -e "${COLOR_RED}${1}${COLOR_RESET}";
+    sleep 2;
+    clear;
+}
 
 GIT_REPO_URL="https://github.com/alectrocute/pi-kiosk";
 LOCAL_USER_HOME_PATH="/home/pi";
@@ -9,39 +25,39 @@ GIT_REPO_PATH="$LOCAL_USER_HOME_PATH/pi-kiosk";
 EXEC_PATH="$LOCAL_USER_HOME_PATH/kiosk";
 SERVICE_PATH="/lib/systemd/system/kiosk.service";
 
-echo "Removing any existing kiosk installation...";
+generate_success_message "Removing any existing kiosk installation...";
 sudo mkdir -p $LOCAL_USER_HOME_PATH;
 cd $LOCAL_USER_HOME_PATH;
 sudo rm -rf $GIT_REPO_PATH $EXEC_PATH;
-echo "Stopping kiosk service...";
+generate_success_message "Stopping kiosk service...";
 sudo systemctl stop kiosk;
 sudo systemctl disable kiosk;
-echo "Removing kiosk service...";
+generate_success_message "Removing kiosk service...";
 sudo rm -rf $SERVICE_PATH;
 clear;
 
-echo "Updating package list...";
+generate_success_message "Updating package list...";
 sudo apt-get update -y;
-echo "Installing dependencies...";
+generate_success_message "Installing dependencies...";
 sudo apt-get install git -y;
 clear;
 
-echo "Cloning the repository...";
+generate_success_message "Cloning the repository...";
 sudo git clone $GIT_REPO_URL;
 cd pi-kiosk;
 clear;
 
-echo "Installing the kiosk...";
+generate_success_message "Installing the kiosk...";
 sudo mkdir -p $EXEC_PATH;
 sudo cp kiosk.sh $EXEC_PATH/kiosk.sh;
 sudo chmod +x $EXEC_PATH/kiosk.sh;
 sudo cp kiosk.service $SERVICE_PATH;
-echo "Enabling kiosk service...";
+generate_success_message "Enabling kiosk service...";
 sudo systemctl enable kiosk.service;
-echo "Setup complete!";
+generate_success_message "Setup complete!";
 sleep 2;
 clear;
 
 # Start the kiosk.
-echo "Starting the kiosk...";
+generate_success_message "Starting the kiosk...";
 sudo systemctl start kiosk;
