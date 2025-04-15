@@ -5,9 +5,6 @@
 # don't wait, there are errors at boot and you have to start kiosk manually.
 sleep 8
 
-echo 'Hiding the mouse cursor...'
-# sudo unclutter -idle 0.1 -root &
-
 echo 'Starting Chromium...'
 
 flags=(
