@@ -5,7 +5,7 @@ export COLOR_RED='\e[0;31m'
 export COLOR_RESET='\e[0m'
 
 clear;
-echo -e "${COLOR_GREEN}Starting setup script!${COLOR_RESET}";
+echo -e "rocket-kiosk: ${COLOR_GREEN}Starting setup script!${COLOR_RESET}";
 
 generate_success_message() {
     echo -e "${COLOR_GREEN}${1}${COLOR_RESET}";
