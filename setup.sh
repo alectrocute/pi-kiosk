@@ -2,7 +2,7 @@ echo "Starting setup script!";
 sudo apt-get update -y;
 sudo apt-get install git unclutter -y;
 cd /home;
-sudo rm -rf pi-kiosk;
+sudo rm -rf ./pi-kiosk /home/pi/kiosk;
 sudo git clone https://github.com/alectrocute/pi-kiosk;
 cd pi-kiosk;
 sudo mkdir -p /home/pi/kiosk;
