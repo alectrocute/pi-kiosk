@@ -1,7 +1,5 @@
 #!/bin/bash
 
-KIOSK_URL=https://site.rocketalumnisolutions.com/home/45?touchscreen=true
-
 # Wait for services to come online.
 # TODO: It would be nice to get rid of this, but right now on Bookworm, if we
 # don't wait, there are errors at boot and you have to start kiosk manually.
