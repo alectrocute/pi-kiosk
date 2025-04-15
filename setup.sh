@@ -1,9 +1,9 @@
 echo "Starting setup script!";
 
 # Remove any existing kiosk installation.
+cd /home;
 echo "Removing any existing kiosk installation...";
-sudo rm -rf /home/pi-kiosk;
-sudo rm -rf /home/pi;
+sudo rm -rf /home/pi-kiosk /home/pi;
 echo "Stopping kiosk service...";
 sudo systemctl stop kiosk;
 sudo systemctl disable kiosk;
@@ -18,7 +18,6 @@ sudo apt-get install git unclutter -y;
 
 # Clone the repository.
 echo "Cloning the repository...";
-cd /home;
 sudo git clone https://github.com/alectrocute/pi-kiosk;
 cd pi-kiosk;
 
