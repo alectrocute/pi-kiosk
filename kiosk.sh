@@ -11,4 +11,4 @@ echo 'Hiding the mouse cursor...'
 sudo unclutter -idle 0.1 -root &
 
 echo 'Starting Chromium...'
-sudo /usr/bin/chromium-browser --noerrdialogs --disable-infobars --kiosk --app=$KIOSK_URL
+/usr/bin/chromium-browser --noerrdialogs --disable-infobars --kiosk --app=$KIOSK_URL
