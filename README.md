@@ -2,17 +2,9 @@
 
 <p align="center"><img alt="Raspberry Pi Touch Display 2 with HA Kiosk" src="/resources/pi-touch-display-kiosk.jpeg" height="auto" width="600"></p>
 
-This project contains the simplest form of a persistent Raspberry Pi-based browser kiosk.
-
-Kiosks are useful if you want to build a web dashboard for something and have the Pi display it, or have a custom web page or online video play automatically when your Pi boots up, and take over the full screen.
-
-This configuration is not meant to be highly secure, or extremely robust, I just use it when I want to pop a web page up on one of my Pis full-screen, like for a Home Assistant control panel.
-
-For my own Kiosk, I'm using the following hardware to display a Home Assistant dashboard:
+Requirement:
 
   - Raspberry Pi 5 (2GB)
-  - Raspberry Pi Touch Display 2
-  - [Touch Display 2 3D Printed Stand](https://www.printables.com/model/1062445-raspberry-pi-touch-display-2-stand)
 
 ## Setup
 
@@ -23,37 +15,6 @@ On the Raspberry Pi, with Raspian OS installed:
 ```
 
 Ensure you're running Pi OS with a graphical interface (the 'full install'), and Chromium is installed (it should be, by default).
-
-Then open up Terminal and install a prerequisite:
-
-```
-sudo apt install unclutter
-```
-
-Create the script that will run the Kiosk:
-
-```
-mkdir -p /home/pi/kiosk
-cp kiosk.sh /home/pi/kiosk/kiosk.sh
-```
-
-Copy over the SystemD unit file to run the `kiosk` service:
-
-```
-sudo cp kiosk.service /lib/systemd/system/kiosk.service
-```
-
-Enable the Systemd `kiosk` service so it will automatically run at system boot:
-
-```
-sudo systemctl enable kiosk.service
-```
-
-(Optional) Fire up the `kiosk` service immediately:
-
-```
-sudo systemctl start kiosk
-```
 
 ## Rotating the Screen
 
