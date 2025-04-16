@@ -5,8 +5,6 @@ COLOR_RESET='\e[0m'
 
 generate_success_message() {
     echo -e "rocket-kiosk: ${COLOR_GREEN}${1}${COLOR_RESET}";
-    sleep 3;
-    clear;
 }
 
 GIT_REPO_URL="https://github.com/alectrocute/pi-kiosk";
