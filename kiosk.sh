@@ -4,6 +4,7 @@ sleep 8
 
 flags=(
    --ozone-platform=wayland
+   --enable-features=UseOzonePlatform
    --start-maximized
    --disable-component-update
    --disable-gpu-driver-bug-workarounds
@@ -47,4 +48,4 @@ flags=(
 # Standard behavior - runs chromium
 echo "Starting Chromium with flags: ${flags[@]}"
 
-chromium-browser "${flags[@]}" --app=$KIOSK_URL
+chromium-browser "${flags[@]}" --app=https://site.rocketalumnisolutions.com/home/45?touchscreen=true
