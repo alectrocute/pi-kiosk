@@ -5,6 +5,8 @@ After=graphical.target
 
 [Service]
 Environment="DISPLAY=:0"
+Environment="XDG_RUNTIME_DIR=/run/user/1000"
+Environment="WAYLAND_DISPLAY=wayland-0"
 Environment="KIOSK_URL=https://site.rocketalumnisolutions.com/home/45?touchscreen=true"
 Type=simple
 ExecStart=/bin/bash /home/pi/kiosk/kiosk.sh
