@@ -3,8 +3,11 @@
 sleep 8
 
 flags=(
+   # wayland-related flags
    --ozone-platform=wayland
    --enable-features=UseOzonePlatform
+
+   # general kiosk flags
    --start-maximized
    --disable-component-update
    --disable-gpu-driver-bug-workarounds
@@ -24,7 +27,8 @@ flags=(
    --noerrdialogs
    --autoplay-policy=no-user-gesture-required
    --kiosk
-   # ai suggested the following flags:
+
+   # ai suggested flags
    --disable-background-networking
    --disable-background-timer-throttling
    --disable-breakpad
@@ -48,4 +52,4 @@ flags=(
 # Standard behavior - runs chromium
 echo "Starting Chromium with flags: ${flags[@]}"
 
-chromium-browser "${flags[@]}" --app=https://site.rocketalumnisolutions.com/home/45?touchscreen=true
+chromium-browser "${flags[@]}" --app=$KIOSK_URL
