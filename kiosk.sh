@@ -7,27 +7,26 @@ sleep 8
 
 flags=(
    --disable-component-update
-   # --disable-composited-antialiasing
    --disable-gpu-driver-bug-workarounds
    --disable-infobars
    --disable-low-res-tiling
    --disable-pinch
    --disable-session-crashed-bubble
-   # --disable-smooth-scrolling
    --enable-accelerated-video-decode
    --enable-gpu-rasterization
    # --enable-low-end-device-mode
+   # --disable-smooth-scrolling
+   --disable-composited-antialiasing
    --enable-oop-rasterization
    --force-device-scale-factor=1
    --ignore-gpu-blocklist
    --no-first-run
    --noerrdialogs
-   # --disable-features=TranslateUI
    --autoplay-policy=no-user-gesture-required
    --kiosk
 )
 
 # Standard behavior - runs chromium
-echo -e "Starting Chromium with flags: ${flags[@]}"
+echo "Starting Chromium with flags: ${flags[@]}"
 
 chromium-browser "${flags[@]}" --app=$KIOSK_URL
