@@ -1,9 +1,8 @@
 #!/bin/bash
 
-COLOR_GREEN='\e[0;32m'
-COLOR_RESET='\e[0m'
-
 generate_success_message() {
+    COLOR_GREEN='\e[0;32m'
+    COLOR_RESET='\e[0m'
     echo -e "rocket-kiosk: ${COLOR_GREEN}${1}${COLOR_RESET}";
 }
 
