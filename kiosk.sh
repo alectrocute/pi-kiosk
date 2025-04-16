@@ -5,8 +5,6 @@
 # don't wait, there are errors at boot and you have to start kiosk manually.
 sleep 8
 
-echo 'Starting Chromium...'
-
 flags=(
    --disable-component-update
    --disable-composited-antialiasing
@@ -30,4 +28,6 @@ flags=(
 )
 
 # Standard behavior - runs chromium
+echo -e "Starting Chromium with flags: ${flags[@]}"
+
 chromium-browser "${flags[@]}" --app=$KIOSK_URL
