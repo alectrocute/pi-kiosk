@@ -3,6 +3,8 @@
 sleep 8
 
 flags=(
+   --ozone-platform=wayland
+   --start-maximized
    --disable-component-update
    --disable-gpu-driver-bug-workarounds
    --disable-infobars
