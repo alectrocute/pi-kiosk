@@ -7,24 +7,24 @@ sleep 8
 
 flags=(
    --disable-component-update
-   --disable-composited-antialiasing
+   # --disable-composited-antialiasing
    --disable-gpu-driver-bug-workarounds
    --disable-infobars
    --disable-low-res-tiling
    --disable-pinch
    --disable-session-crashed-bubble
-   --disable-smooth-scrolling
+   # --disable-smooth-scrolling
    --enable-accelerated-video-decode
    --enable-gpu-rasterization
-   --enable-low-end-device-mode
+   # --enable-low-end-device-mode
    --enable-oop-rasterization
    --force-device-scale-factor=1
    --ignore-gpu-blocklist
-   --kiosk
    --no-first-run
    --noerrdialogs
-   --disable-features=TranslateUI
+   # --disable-features=TranslateUI
    --autoplay-policy=no-user-gesture-required
+   --kiosk
 )
 
 # Standard behavior - runs chromium
