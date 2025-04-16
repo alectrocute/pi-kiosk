@@ -8,14 +8,23 @@ sleep 8
 echo 'Starting Chromium...'
 
 flags=(
-   --kiosk
-   --touch-events=enabled
-   --disable-pinch
-   --noerrdialogs
-   --disable-session-crashed-bubble
-   --simulate-outdated-no-au='Tue, 31 Dec 2099 23:59:59 GMT'
    --disable-component-update
-   --overscroll-history-navigation=0
+   --disable-composited-antialiasing
+   --disable-gpu-driver-bug-workarounds
+   --disable-infobars
+   --disable-low-res-tiling
+   --disable-pinch
+   --disable-session-crashed-bubble
+   --disable-smooth-scrolling
+   --enable-accelerated-video-decode
+   --enable-gpu-rasterization
+   --enable-low-end-device-mode
+   --enable-oop-rasterization
+   --force-device-scale-factor=1
+   --ignore-gpu-blocklist
+   --kiosk
+   --no-first-run
+   --noerrdialogs
    --disable-features=TranslateUI
    --autoplay-policy=no-user-gesture-required
 )
